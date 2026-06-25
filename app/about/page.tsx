@@ -13,7 +13,7 @@ export default function AboutPage() {
             • Since 2024
           </span>
 
-          <h1 className="mt-6 max-w-xl text-3xl font-bold leading-tight text-[#1F2933] sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 max-w-xl font-serif text-3xl font-bold leading-tight text-[#1F2933] sm:text-4xl md:text-5xl lg:text-6xl">
             Gói ghém tinh hoa Pháp Lam vào nhịp sống mới.
           </h1>
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
       </section>
 
       {/* STORY */}
-      <section className="bg-white py-14 md:py-20">
+      <section className="bg-white py-12 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
           <div className="relative grid gap-4 sm:grid-cols-[1.5fr_0.8fr] sm:gap-5">
             <div className="relative h-[320px] overflow-hidden rounded-lg shadow-xl sm:h-[520px]">
@@ -96,7 +96,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold leading-tight text-[#003B6F] md:text-4xl">
+            <h2 className="font-serif text-3xl font-bold leading-tight text-[#003B6F] md:text-4xl">
               Người kể chuyện bằng <br /> men lam
             </h2>
 
@@ -127,7 +127,7 @@ export default function AboutPage() {
       </section>
 
       {/* TIMELINE */}
-      <section className="py-14 md:py-20">
+      <section className="py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Hành Trình Di Sản"
@@ -168,7 +168,7 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-white py-14 md:py-20">
+      <section className="bg-white py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Ba Trụ Cột Tâm Hồn"
@@ -188,7 +188,7 @@ export default function AboutPage() {
       </section>
 
       {/* CRAFT GALLERY */}
-      <section className="bg-white py-14 md:py-20">
+      <section className="bg-white py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="left"
