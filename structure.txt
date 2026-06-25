@@ -1,0 +1,38 @@
+components/
+├─ layout/
+│  ├─ Navbar.tsx
+│  ├─ Footer.tsx
+│  └─ Newsletter.tsx
+│
+├─ home/
+│  ├─ HeroBanner.tsx
+│  ├─ CollectionCircleList.tsx
+│  ├─ ProductTypeCards.tsx
+│  ├─ DiyFeatureSection.tsx
+│  └─ FeaturedProducts.tsx
+│
+├─ product/
+│  ├─ ProductCard.tsx
+│  ├─ ProductFilter.tsx
+│  ├─ ProductGallery.tsx
+│  ├─ ProductInfo.tsx
+│  ├─ ProductTabs.tsx
+│  └─ RelatedProducts.tsx
+│
+├─ checkout/
+│  ├─ CheckoutForm.tsx
+│  ├─ PaymentMethod.tsx
+│  ├─ OrderSummary.tsx
+│  └─ SuccessOrderCard.tsx
+│
+├─ blog/
+│  ├─ BlogHero.tsx
+│  ├─ BlogCard.tsx
+│  └─ BlogCategoryTabs.tsx
+│
+└─ about/
+   ├─ AboutHero.tsx
+   ├─ FounderSection.tsx
+   ├─ TimelineSection.tsx
+   ├─ ValueCards.tsx
+   └─ CraftGallery.tsx
