@@ -1,0 +1,28 @@
+ecommerce-mock/
+├─ app/
+│  ├─ page.tsx              # Home
+│  ├─ products/page.tsx     # Danh sách sản phẩm
+│  ├─ products/[id]/page.tsx # Chi tiết sản phẩm
+│  ├─ cart/page.tsx         # Giỏ hàng mock
+│  ├─ checkout/page.tsx
+│  └─ admin/page.tsx
+│
+├─ components/
+│  ├─ Navbar.tsx
+│  ├─ ProductCard.tsx
+│  ├─ CategoryCard.tsx
+│  ├─ CartItem.tsx
+│  └─ Footer.tsx
+│
+├─ data/
+│  ├─ products.ts
+│  ├─ categories.ts
+│  ├─ orders.ts
+│  └─ users.ts
+│
+├─ public/
+│  └─ images/
+│
+├─ app/globals.css
+├─ package.json
+└─ tailwind.config.ts
