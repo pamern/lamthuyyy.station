@@ -155,6 +155,8 @@ export default function Navbar() {
                         alt={item.name}
                         fill
                         sizes="40px"
+                        quality={60}
+                        decoding="async"
                         className="object-cover"
                       />
                     </div>

@@ -18,8 +18,10 @@ export default function HomePage() {
             src="/brand/coverpage.png"
             alt=""
             fill
+            sizes="100vw"
+            quality={70}
             className="object-cover"
-            priority
+            preload
           />
         </div>
         <div className="absolute inset-0 bg-black/45" />
@@ -73,8 +75,8 @@ export default function HomePage() {
             <div className="absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none md:w-32" />
             
             <div className="animate-marquee flex gap-12 md:gap-20">
-              {/* Duplicate collections 4 times to ensure seamless infinite scroll */}
-              {[...collections, ...collections, ...collections, ...collections].map((collection, index) => (
+              {/* Duplicate once for a seamless loop without forcing many image candidates. */}
+              {[...collections, ...collections].map((collection, index) => (
                 <div
                   key={`${collection.id}-${index}`}
                   className="inline-block flex-shrink-0"
@@ -97,6 +99,8 @@ export default function HomePage() {
               alt="Móc khóa"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
+              quality={70}
+              decoding="async"
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -120,6 +124,8 @@ export default function HomePage() {
               alt="Treo áo"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
+              quality={70}
+              decoding="async"
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -143,6 +149,8 @@ export default function HomePage() {
               alt="Bookmark"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
+              quality={70}
+              decoding="async"
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -172,6 +180,8 @@ export default function HomePage() {
                 alt="DIY Kit"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={70}
+                decoding="async"
                 className="object-cover"
               />
             </div>

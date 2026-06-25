@@ -125,14 +125,14 @@ function ProductsContent() {
   return (
     <main className="min-h-screen bg-white">
       {/* ===== HEADER ===== */}
-      <section className="bg-[#f4f1ef] px-8 pb-10 pt-12 md:pt-16">
+      <section className="bg-[#f4f1ef] px-4 pb-8 pt-10 sm:px-6 md:px-8 md:pb-10 md:pt-16">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-serif text-3xl font-bold text-[#083B63] md:text-4xl">
+          <h1 className="font-serif text-2xl font-bold leading-tight text-[#083B63] sm:text-3xl md:text-4xl">
             Pháp Lam &amp; Nghệ Thuật Sống Chậm
           </h1>
 
           {/* Search Bar */}
-          <div className="mx-auto mt-8 flex h-14 max-w-2xl items-center overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div className="mx-auto mt-6 flex h-12 max-w-2xl items-center overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm sm:mt-8 sm:h-14">
             <input
               type="text"
               placeholder="Bạn đang tìm món quà gì?"
@@ -141,7 +141,7 @@ function ProductsContent() {
                 setSearchQuery(e.target.value);
                 setCurrentPage(1);
               }}
-              className="flex-1 px-6 text-base text-gray-700 outline-none placeholder:text-gray-400"
+              className="min-w-0 flex-1 px-4 text-sm text-gray-700 outline-none placeholder:text-gray-400 sm:px-6 sm:text-base"
             />
             <button className="flex h-full w-14 items-center justify-center text-gray-500 transition-colors hover:text-[#083B63]">
               <Search size={22} />
@@ -151,9 +151,9 @@ function ProductsContent() {
       </section>
 
       {/* ===== CATEGORY PILLS ===== */}
-      <section className="border-b border-gray-200 px-8">
-        <div className="mx-auto flex max-w-7xl items-center justify-between py-4">
-          <div className="flex flex-wrap items-center gap-2">
+      <section className="border-b border-gray-200 px-4 sm:px-6 md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between">
+          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
             {categoryFilters.map((cat) => (
               <button
                 key={cat}
@@ -161,7 +161,7 @@ function ProductsContent() {
                   setActiveCategory(cat);
                   setCurrentPage(1);
                 }}
-                className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 ${
+                className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 sm:px-5 ${
                   activeCategory === cat
                     ? "bg-[#083B63] text-white shadow-sm"
                     : "border border-gray-200 text-gray-600 hover:border-[#083B63] hover:text-[#083B63]"
@@ -220,7 +220,7 @@ function ProductsContent() {
       </section>
 
       {/* ===== MAIN CONTENT ===== */}
-      <section className="px-8 py-10">
+      <section className="px-4 py-8 sm:px-6 md:px-8 md:py-10">
         <div className="mx-auto flex max-w-7xl gap-10">
           {/* Sidebar Filter */}
           <aside className="hidden w-56 flex-shrink-0 lg:block">

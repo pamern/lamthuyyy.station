@@ -17,6 +17,8 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
         alt={collection.name}
         fill
         sizes="(max-width: 768px) 280px, 420px"
+        quality={70}
+        decoding="async"
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
       {/* Dark gradient overlay for elegant readability */}

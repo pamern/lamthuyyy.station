@@ -7,13 +7,13 @@ export default function AboutPage() {
   return (
     <main className="bg-[#F8F6F3] text-[#1F2933]">
       {/* HERO */}
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-20">
         <div>
           <span className="inline-flex rounded-full bg-[#EAF1F8] px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-[#003B6F]">
             • Since 2024
           </span>
 
-          <h1 className="mt-6 max-w-xl text-5xl font-bold leading-tight text-[#1F2933] md:text-6xl">
+          <h1 className="mt-6 max-w-xl text-3xl font-bold leading-tight text-[#1F2933] sm:text-4xl md:text-5xl lg:text-6xl">
             Gói ghém tinh hoa Pháp Lam vào nhịp sống mới.
           </h1>
 
@@ -33,54 +33,62 @@ export default function AboutPage() {
         </div>
 
         <div className="relative">
-          <div className="relative h-[520px] overflow-hidden rounded-lg shadow-2xl">
+          <div className="relative h-[320px] overflow-hidden rounded-lg shadow-2xl sm:h-[420px] lg:h-[520px]">
             <Image
               src="/images/about/about-hero.png"
               alt="Nghệ nhân chế tác Pháp Lam"
               fill
+              sizes="(max-width: 1024px) 92vw, 48vw"
+              quality={70}
               className="object-cover"
-              priority
+              preload
             />
           </div>
 
-          <div className="absolute -bottom-5 -left-8 flex h-28 w-28 items-center justify-center rounded-full bg-white text-center text-xs font-bold uppercase leading-5 text-[#003B6F] shadow-xl">
+          <div className="absolute -bottom-5 left-4 flex h-24 w-24 items-center justify-center rounded-full bg-white text-center text-[11px] font-bold uppercase leading-5 text-[#003B6F] shadow-xl sm:-left-8 sm:h-28 sm:w-28 sm:text-xs">
             Kỹ nghệ <br /> 200 năm
           </div>
         </div>
       </section>
 
       {/* STORY */}
-      <section className="bg-white py-20">
-        <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center">
-          <div className="relative grid grid-cols-[1.5fr_0.8fr] gap-5">
-            <div className="relative h-[520px] overflow-hidden rounded-lg shadow-xl">
+      <section className="bg-white py-14 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+          <div className="relative grid gap-4 sm:grid-cols-[1.5fr_0.8fr] sm:gap-5">
+            <div className="relative h-[320px] overflow-hidden rounded-lg shadow-xl sm:h-[520px]">
               <Image
                 src="/images/about/founder.png"
                 alt="Founder Lam Thủy"
                 fill
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 58vw, 38vw"
+                quality={70}
                 className="object-cover"
               />
             </div>
 
-            <div className="flex flex-col gap-5 pt-28">
-              <div className="absolute left-[55%] top-[-25px] rounded-full bg-[#003B6F] px-6 py-4 text-sm text-white shadow-lg">
+            <div className="flex flex-col gap-4 sm:gap-5 sm:pt-28">
+              <div className="absolute left-[55%] top-[-25px] hidden rounded-full bg-[#003B6F] px-6 py-4 text-sm text-white shadow-lg sm:block">
                 Thảo Lam
               </div>
 
-              <div className="relative h-44 overflow-hidden rounded-md shadow-lg">
+              <div className="relative h-48 overflow-hidden rounded-md shadow-lg sm:h-44">
                 <Image
                   src="/images/about/craft-2.png"
                   alt="Chi tiết chế tác"
                   fill
+                  sizes="(max-width: 640px) 92vw, 28vw"
+                  quality={70}
                   className="object-cover"
                 />
               </div>
 
-              <div className="relative h-44 overflow-hidden rounded-md shadow-lg">
+              <div className="relative h-48 overflow-hidden rounded-md shadow-lg sm:h-44">
                 <Image
                   src="/images/about/craft-3.png"
                   alt="Men màu Pháp Lam"
                   fill
+                  sizes="(max-width: 640px) 92vw, 28vw"
+                  quality={70}
                   className="object-cover"
                 />
               </div>
@@ -88,7 +96,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="text-4xl font-bold leading-tight text-[#003B6F]">
+            <h2 className="text-3xl font-bold leading-tight text-[#003B6F] md:text-4xl">
               Người kể chuyện bằng <br /> men lam
             </h2>
 
@@ -106,11 +114,11 @@ export default function AboutPage() {
               kế tối giản, tinh tế.
             </p>
 
-            <p className="mt-10 text-3xl italic text-[#5A7FA3]">Thảo Lam</p>
+            <p className="mt-10 text-2xl italic text-[#5A7FA3] md:text-3xl">Thảo Lam</p>
 
             <Link
               href="/blog"
-              className="mt-8 inline-flex bg-[#003B6F] px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-[#002B50]"
+              className="mt-8 inline-flex w-full justify-center bg-[#003B6F] px-6 py-4 text-center text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#002B50] sm:w-auto sm:px-8 sm:text-sm"
             >
               Theo dõi hành trình của chúng tôi
             </Link>
@@ -119,8 +127,8 @@ export default function AboutPage() {
       </section>
 
       {/* TIMELINE */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="py-14 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Hành Trình Di Sản"
             description="Từ khát khao cá nhân đến một “trạm di sản” đương đại."
@@ -160,8 +168,8 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-white py-14 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Ba Trụ Cột Tâm Hồn"
             description="Giá trị cốt lõi dẫn lối Lam Thủy trong từng nhịp đập sáng tạo."
@@ -180,20 +188,22 @@ export default function AboutPage() {
       </section>
 
       {/* CRAFT GALLERY */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-white py-14 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="left"
             title="Cận Cảnh Sự Tỉ Mỉ"
             description="Vẻ đẹp thực sự của Pháp Lam nằm ở những chi tiết siêu nhỏ, nơi màu sắc hòa quyện và ranh giới giữa kim loại và men trở nên mờ ảo."
           />
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="relative h-[580px] overflow-hidden rounded-md">
+          <div className="mt-10 grid gap-4 sm:gap-5 lg:grid-cols-2">
+            <div className="relative h-[320px] overflow-hidden rounded-md sm:h-[460px] lg:h-[580px]">
               <Image
                 src={craftImages[0].src}
                 alt={craftImages[0].alt}
                 fill
+                sizes="(max-width: 1024px) 92vw, 48vw"
+                quality={70}
                 className="object-cover"
               />
             </div>
@@ -203,23 +213,27 @@ export default function AboutPage() {
                 {craftImages.slice(1, 3).map((image) => (
                   <div
                     key={image.src}
-                    className="relative h-64 overflow-hidden rounded-md"
+                    className="relative h-52 overflow-hidden rounded-md sm:h-64"
                   >
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
+                      sizes="(max-width: 768px) 92vw, (max-width: 1024px) 44vw, 24vw"
+                      quality={70}
                       className="object-cover"
                     />
                   </div>
                 ))}
               </div>
 
-              <div className="relative h-72 overflow-hidden rounded-md">
+              <div className="relative h-56 overflow-hidden rounded-md sm:h-72">
                 <Image
                   src={craftImages[3].src}
                   alt={craftImages[3].alt}
                   fill
+                  sizes="(max-width: 1024px) 92vw, 48vw"
+                  quality={70}
                   className="object-cover"
                 />
               </div>

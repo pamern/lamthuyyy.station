@@ -122,8 +122,8 @@ function ProductDetailContent({
   return (
     <main className="min-h-screen bg-white">
       {/* ===== BREADCRUMB ===== */}
-      <nav className="border-b border-gray-100 px-8 py-3">
-        <div className="mx-auto flex max-w-7xl items-center gap-2 text-sm text-gray-500">
+      <nav className="border-b border-gray-100 px-4 py-3 sm:px-6 md:px-8">
+        <div className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto whitespace-nowrap text-xs text-gray-500 sm:text-sm">
           <Link href="/" className="transition-colors hover:text-[#083B63]">
             Trang chủ
           </Link>
@@ -142,11 +142,11 @@ function ProductDetailContent({
       </nav>
 
       {/* ===== PRODUCT SECTION ===== */}
-      <section className="px-8 py-10 md:py-14">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:gap-16">
+      <section className="px-4 py-8 sm:px-6 md:px-8 md:py-14">
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:gap-16">
           {/* Gallery */}
           <div className="flex flex-col gap-4">
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               {/* Thumbnails */}
               <div className="hidden flex-col gap-3 md:flex">
                 {gallery.map((img, idx) => (
@@ -164,6 +164,8 @@ function ProductDetailContent({
                       alt={`${product.name} view ${idx + 1}`}
                       fill
                       sizes="64px"
+                      quality={60}
+                      decoding="async"
                       className="object-cover"
                     />
                   </button>
@@ -171,14 +173,15 @@ function ProductDetailContent({
               </div>
 
               {/* Main Image */}
-              <div className="relative flex-1 aspect-square overflow-hidden rounded-2xl bg-[#f4f1ef] group/image">
+              <div className="group/image relative aspect-square flex-1 overflow-hidden rounded-xl bg-[#f4f1ef] sm:rounded-2xl">
                 <Image
                   src={gallery[activeImage]}
                   alt={product.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
                   className="object-cover"
-                  priority
+                  preload
                 />
                 
                 {/* Navigation arrows */}
@@ -221,6 +224,8 @@ function ProductDetailContent({
                       alt={`${product.name} mobile view ${idx + 1}`}
                       fill
                       sizes="56px"
+                      quality={60}
+                      decoding="async"
                       className="object-cover"
                     />
                   </button>
@@ -237,7 +242,7 @@ function ProductDetailContent({
             </span>
 
             {/* Name */}
-            <h1 className="mt-4 font-serif text-2xl font-bold text-[#083B63] md:text-3xl">
+            <h1 className="mt-4 font-serif text-2xl font-bold leading-tight text-[#083B63] md:text-3xl">
               {product.name} – Pháp Lam Cung Đình
             </h1>
 
@@ -368,7 +373,7 @@ function ProductDetailContent({
             )}
 
             {/* Action Buttons */}
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 onClick={() => handleAddToCart(true)}
                 className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-[#083B63] text-sm font-semibold text-white transition-all hover:bg-[#0a4d80] hover:shadow-lg cursor-pointer"
@@ -409,15 +414,15 @@ function ProductDetailContent({
       </section>
 
       {/* ===== TABS ===== */}
-      <section className="border-t border-gray-100 px-8 py-10 md:py-14">
+      <section className="border-t border-gray-100 px-4 py-10 sm:px-6 md:px-8 md:py-14">
         <div className="mx-auto max-w-7xl">
           {/* Tab Headers */}
-          <div className="flex gap-8 border-b border-gray-200">
+          <div className="flex gap-6 overflow-x-auto border-b border-gray-200 sm:gap-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`pb-4 text-sm font-medium transition-all ${
+                className={`shrink-0 pb-4 text-sm font-medium transition-all ${
                   activeTab === tab.id
                     ? "border-b-2 border-[#083B63] text-[#083B63]"
                     : "text-gray-500 hover:text-gray-700"
@@ -570,7 +575,7 @@ function ProductDetailContent({
 
       {/* ===== RELATED PRODUCTS ===== */}
       {relatedProducts.length > 0 && (
-        <section className="border-t border-gray-100 px-8 py-14">
+        <section className="border-t border-gray-100 px-4 py-12 sm:px-6 md:px-8 md:py-14">
           <div className="mx-auto max-w-7xl">
             <div className="flex items-center justify-between">
               <h2 className="font-serif text-2xl font-bold text-[#083B63]">

@@ -4,7 +4,7 @@ export const materials = [
     name: "Kẽm nhung đỏ",
     unit: "Bó",
     price: 25000,
-    image: "/images/materials/chenille-red.jpg",
+    image: "/products/lienhoa/moc_khoa/mockhoahong.png",
     stock: 100,
   },
   {
@@ -12,7 +12,7 @@ export const materials = [
     name: "Kẽm nhung trắng",
     unit: "Bó",
     price: 25000,
-    image: "/images/materials/chenille-white.jpg",
+    image: "/products/huongnguyet/moc_khoa/mockhoaxanh.png",
     stock: 120,
   },
   {
@@ -20,7 +20,7 @@ export const materials = [
     name: "Dây đồng",
     unit: "Cuộn",
     price: 35000,
-    image: "/images/materials/copper-wire.jpg",
+    image: "/products/lienhoa/cai_ao/caiaohong.png",
     stock: 50,
   },
   {
@@ -28,7 +28,7 @@ export const materials = [
     name: "Keo UV",
     unit: "Chai",
     price: 49000,
-    image: "/images/materials/glue.jpg",
+    image: "/products/DIYKit.png",
     stock: 40,
   },
   {
@@ -36,7 +36,7 @@ export const materials = [
     name: "Móc khóa",
     unit: "Cái",
     price: 5000,
-    image: "/images/materials/keyring.jpg",
+    image: "/products/huongnguyet/moc_khoa/mockhoaxanh.png",
     stock: 300,
   },
   {
@@ -44,7 +44,7 @@ export const materials = [
     name: "Bookmark kim loại",
     unit: "Cái",
     price: 9000,
-    image: "/images/materials/bookmark-base.jpg",
+    image: "/products/huongnguyet/bookmart/bookmarkxanh.png",
     stock: 200,
   },
   {
@@ -52,7 +52,7 @@ export const materials = [
     name: "Móc treo áo",
     unit: "Cái",
     price: 12000,
-    image: "/images/materials/hanger-base.jpg",
+    image: "/products/huongnguyet/cai_ao/caiaoxanh.png",
     stock: 100,
   },
 ];
