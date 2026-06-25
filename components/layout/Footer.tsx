@@ -6,35 +6,33 @@ import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 const footerLinks = [
   { title: "Trang chủ", href: "/" },
   { title: "Sản phẩm", href: "/products" },
-  { title: "Bộ sưu tập", href: "/collections" },
-  { title: "DIY Kit", href: "/diy-kit" },
   { title: "Blog", href: "/blog" },
   { title: "Về chúng tôi", href: "/about" },
 ];
 
 const serviceLinks = [
-  { title: "Giao hàng", href: "#" },
-  { title: "Đổi trả", href: "#" },
-  { title: "Bảo quản sản phẩm", href: "#" },
-  { title: "Gói quà tặng", href: "#" },
+  { title: "Giao hàng", href: "/services/giao-hang" },
+  { title: "Đổi trả", href: "/services/doi-tra" },
+  { title: "Bảo quản sản phẩm", href: "/services/bao-quan" },
+  { title: "Gói quà tặng", href: "/services/qua-tang" },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-gray-800 bg-black text-white">
       <div className="mx-auto max-w-7xl px-8 py-14">
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-4">
               <Image
-                src="/images/logo.png"
+                src="/brand/logo.png"
                 alt="LAM THỦY"
                 width={48}
                 height={48}
               />
 
-              <h2 className="text-2xl font-bold tracking-[3px]">LAM THỦY</h2>
+              <h2 className="font-serif text-2xl font-bold tracking-[3px]">LAM THỦY</h2>
             </div>
 
             <p className="mt-4 leading-7 text-gray-400">
@@ -43,26 +41,43 @@ export default function Footer() {
 
             <p className="mt-2 text-gray-500">Nghệ thuật trong tầm tay.</p>
 
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6 flex gap-4 text-gray-400">
               <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-gray-400 transition-colors hover:border-[#B58A43] hover:text-[#B58A43]"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-[#B58A43]"
+                aria-label="Facebook"
               >
-                <FaFacebookF size={16} />
+                <FaFacebookF size={18} />
               </a>
-
               <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-gray-400 transition-colors hover:border-[#B58A43] hover:text-[#B58A43]"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-[#B58A43]"
+                aria-label="Instagram"
               >
-                <FaInstagram size={16} />
+                <FaInstagram size={18} />
               </a>
-
               <a
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-gray-400 transition-colors hover:border-[#B58A43] hover:text-[#B58A43]"
+                href="https://tiktok.com"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-[#B58A43]"
+                aria-label="TikTok"
               >
-                <FaTiktok size={16} />
+                <FaTiktok size={18} />
+              </a>
+            </div>
+            
+            <div className="mt-5 flex items-center gap-3 text-gray-400">
+              <Mail size={18} />
+              <a
+                href="mailto:lamthuy.station@gmail.com"
+                className="text-sm transition-colors hover:text-[#B58A43]"
+              >
+                lamthuy.station@gmail.com
               </a>
             </div>
           </div>
@@ -105,34 +120,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="mb-4 font-semibold uppercase tracking-wider text-white">
-              Bản tin
-            </h3>
-
-            <p className="mb-4 text-sm leading-6 text-gray-400">
-              Nhận thông tin mới nhất về di sản & nghệ thuật.
-            </p>
-
-            <div className="flex h-11 overflow-hidden rounded-full border border-gray-700 bg-[#1B1B1B]">
-              <input
-                type="email"
-                placeholder="Email của bạn"
-                className="flex-1 bg-transparent px-5 text-sm text-white outline-none placeholder:text-gray-500"
-              />
-
-              <button className="flex w-12 items-center justify-center bg-[#083B63] text-white transition-colors hover:bg-[#B58A43]">
-                <Send size={18} />
-              </button>
-            </div>
-
-            <div className="mt-5 flex items-center gap-3 text-gray-400">
-              <Mail size={18} />
-              <span className="text-sm">hello@lamthuy.vn</span>
-            </div>
           </div>
         </div>
       </div>
