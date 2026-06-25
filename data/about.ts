@@ -41,7 +41,7 @@ export const timelineItems = [
 
 export const craftImages = [
   {
-    src: "/images/about/craft-1.png",
+    src: "/images/about/about-hero.png",
     alt: "Nghệ nhân chế tác Pháp Lam",
   },
   {
@@ -53,7 +53,7 @@ export const craftImages = [
     alt: "Quy trình hoàn thiện sản phẩm",
   },
   {
-    src: "/images/about/craft-4.png",
+    src: "/products/collection.png",
     alt: "Sản phẩm Pháp Lam hoàn thiện",
   },
 ];

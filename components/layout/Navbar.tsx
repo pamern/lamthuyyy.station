@@ -17,14 +17,6 @@ const menus = [
     href: "/products",
   },
   {
-    title: "Bộ sưu tập",
-    href: "/collections",
-  },
-  {
-    title: "DIY Kit",
-    href: "/diy-kit",
-  },
-  {
     title: "Blog",
     href: "/blog",
   },
@@ -83,7 +75,7 @@ export default function Navbar() {
 
         <Link
           href="/"
-          className="text-2xl font-bold tracking-[3px] text-[#083B63]"
+          className="font-serif text-2xl font-bold tracking-[3px] text-[#083B63]"
         >
           LAM THỦY
         </Link>

@@ -30,9 +30,9 @@ export default function HomePage() {
           </span>
 
           <h1 className="max-w-lg font-serif text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-            Nghệ thuật
+            Nghệ thuật{" "}
             <br />
-            trong tầm tay
+            trong <span className="whitespace-nowrap">tầm tay</span>
           </h1>
 
           <p className="mt-6 max-w-md text-base leading-7 text-gray-300">
@@ -183,7 +183,7 @@ export default function HomePage() {
               </span>
 
               <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-4xl">
-                Tự tay tạo nên
+                Tự tay tạo nên{" "}
                 <br />
                 di sản của chính mình
               </h2>

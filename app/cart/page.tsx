@@ -48,6 +48,15 @@ export default function CartPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [orderCode, setOrderCode] = useState("");
+  const [orderSummary, setOrderSummary] = useState({
+    fullName: "",
+    phone: "",
+    address: "",
+    province: "",
+    district: "",
+    paymentMethod: "",
+    total: 0,
+  });
 
   // Load cart from LocalStorage on mount
   useEffect(() => {
@@ -153,7 +162,7 @@ export default function CartPage() {
   const total = subtotal + shippingFee - discountAmount;
 
   // Form Validation
-  const validateForm = () => {
+  const getFormErrors = () => {
     const newErrors: Record<string, string> = {};
 
     // Name Validation
@@ -196,8 +205,7 @@ export default function CartPage() {
       newErrors.district = "Vui lòng chọn quận / huyện";
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return newErrors;
   };
 
   // Checkout Handler
@@ -209,9 +217,12 @@ export default function CartPage() {
       return;
     }
 
-    if (!validateForm()) {
+    const newErrors = getFormErrors();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
       // Scroll to the first error
-      const firstErrorKey = Object.keys(errors)[0];
+      const firstErrorKey = Object.keys(newErrors)[0];
       const element = document.getElementById(firstErrorKey);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -221,6 +232,18 @@ export default function CartPage() {
 
     // Generate random order code: LT-XXXXXX
     const randomCode = `LT-${Math.floor(100000 + Math.random() * 900000)}`;
+    
+    // Store order details before clearing cart state
+    setOrderSummary({
+      fullName,
+      phone,
+      address,
+      province: selectedProvince,
+      district: selectedDistrict,
+      paymentMethod,
+      total,
+    });
+    
     setOrderCode(randomCode);
     setIsSuccessModalOpen(true);
 
@@ -713,24 +736,24 @@ export default function CartPage() {
             </p>
 
             <div className="my-6 rounded-xl bg-gray-50 p-5 text-left text-sm text-gray-600 space-y-2 border border-gray-100">
-              <p><strong>Người nhận:</strong> {fullName}</p>
-              <p><strong>Số điện thoại:</strong> {phone}</p>
-              <p><strong>Địa chỉ nhận hàng:</strong> {address}, {selectedDistrict}, {selectedProvince}</p>
-              <p><strong>Phương thức:</strong> {paymentMethod === "bank" ? "Chuyển khoản ngân hàng" : "Thẻ tín dụng quốc tế"}</p>
+              <p><strong>Người nhận:</strong> {orderSummary.fullName}</p>
+              <p><strong>Số điện thoại:</strong> {orderSummary.phone}</p>
+              <p><strong>Địa chỉ nhận hàng:</strong> {orderSummary.address}, {orderSummary.district}, {orderSummary.province}</p>
+              <p><strong>Phương thức:</strong> {orderSummary.paymentMethod === "bank" ? "Chuyển khoản ngân hàng" : "Thẻ tín dụng quốc tế"}</p>
               <div className="border-t border-gray-200 mt-3 pt-3 flex justify-between items-center text-gray-800 font-bold">
                 <span>Tổng giá trị đơn hàng:</span>
-                <span className="text-[#B58A43] text-lg">{formatPrice(total)}đ</span>
+                <span className="text-[#B58A43] text-lg">{formatPrice(orderSummary.total)}đ</span>
               </div>
             </div>
 
-            {paymentMethod === "bank" ? (
+            {orderSummary.paymentMethod === "bank" ? (
               <div className="mb-6 rounded-xl bg-[#083B63]/5 p-5 text-center text-xs text-[#083B63] border border-[#083B63]/10">
                 <p className="font-bold text-sm mb-2 text-[#083B63]">Thông tin chuyển khoản</p>
                 <p>Ngân hàng: <strong>Vietcombank</strong></p>
                 <p>Số tài khoản: <strong>1018899889</strong></p>
                 <p>Chủ tài khoản: <strong>LAM THUY STATION</strong></p>
                 <p className="mt-2 text-[10px] text-gray-500">
-                  Nội dung CK: <strong className="text-[#B58A43]">{orderCode} - {phone}</strong>
+                  Nội dung CK: <strong className="text-[#B58A43]">{orderCode} - {orderSummary.phone}</strong>
                 </p>
                 <p className="mt-2 text-[10px] text-amber-800 font-semibold italic bg-amber-50 rounded py-1 px-2 border border-amber-200/50">
                   * Vui lòng chuyển khoản trước 100% để xác nhận đơn hàng Pre-order.
