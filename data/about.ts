@@ -53,7 +53,7 @@ export const craftImages = [
     alt: "Quy trình hoàn thiện sản phẩm",
   },
   {
-    src: "/products/collection.png",
+    src: "/products/lienhoa/fullbst/collection.png",
     alt: "Sản phẩm Pháp Lam hoàn thiện",
   },
 ];

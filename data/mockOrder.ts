@@ -46,14 +46,14 @@ export const mockOrder: Order = {
     {
       id: 1,
       name: "Bookmark Pháp Lam",
-      image: "/images/products/bookmark-phap-lam.png",
+      image: "/products/huongnguyet/bookmart/bookmarkxanh.png",
       price: 180000,
       quantity: 1,
     },
     {
       id: 2,
       name: "Móc khóa Pháp Lam",
-      image: "/images/products/keychain-phap-lam.png",
+      image: "/products/huongnguyet/moc_khoa/mockhoaxanh.png",
       price: 120000,
       quantity: 2,
     },

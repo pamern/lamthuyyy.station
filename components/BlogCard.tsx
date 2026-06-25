@@ -30,7 +30,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
           {blog.date} · {blog.readTime}
         </p>
 
-        <h2 className="mt-3 text-2xl font-semibold leading-snug text-[#071D3A]">
+        <h2 className="mt-3 font-serif text-xl font-semibold leading-snug text-[#071D3A] sm:text-2xl">
           <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
         </h2>
 

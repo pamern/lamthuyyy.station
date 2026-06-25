@@ -18,18 +18,20 @@ export default function HomePage() {
             src="/brand/coverpage.png"
             alt=""
             fill
+            sizes="100vw"
+            quality={70}
             className="object-cover"
-            priority
+            preload
           />
         </div>
         <div className="absolute inset-0 bg-black/45" />
 
-        <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-center px-8 py-28 md:py-36 lg:py-44">
+        <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-center px-4 py-20 sm:px-6 sm:py-28 md:py-36 lg:px-8 lg:py-44">
           <span className="mb-4 text-sm font-medium uppercase tracking-[4px] text-[#B58A43]">
             Di sản đương đại
           </span>
 
-          <h1 className="max-w-lg font-serif text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="max-w-xs font-serif text-3xl font-bold leading-tight text-white sm:max-w-sm sm:text-4xl md:text-5xl lg:max-w-lg lg:text-6xl">
             Nghệ thuật{" "}
             <br />
             trong <span className="whitespace-nowrap">tầm tay</span>
@@ -52,7 +54,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== COLLECTIONS SECTION ===== */}
-      <section className="bg-white px-8 py-16 md:py-20">
+      <section className="bg-white px-4 py-12 sm:px-6 md:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between">
             <h2 className="font-serif text-2xl font-bold text-[#083B63] md:text-3xl">
@@ -69,12 +71,12 @@ export default function HomePage() {
           {/* Infinite Marquee of Collections */}
           <div className="relative mt-12 overflow-hidden py-4">
             {/* Left and right fade overlays for luxury aesthetic */}
-            <div className="absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none md:w-32" />
-            <div className="absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none md:w-32" />
+            <div className="absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-white to-transparent pointer-events-none sm:w-16 md:w-32" />
+            <div className="absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none sm:w-16 md:w-32" />
             
             <div className="animate-marquee flex gap-12 md:gap-20">
-              {/* Duplicate collections 4 times to ensure seamless infinite scroll */}
-              {[...collections, ...collections, ...collections, ...collections].map((collection, index) => (
+              {/* Duplicate once for a seamless loop without forcing many image candidates. */}
+              {[...collections, ...collections].map((collection, index) => (
                 <div
                   key={`${collection.id}-${index}`}
                   className="inline-block flex-shrink-0"
@@ -88,8 +90,8 @@ export default function HomePage() {
       </section>
 
       {/* ===== CATEGORY CARDS SECTION ===== */}
-      <section className="bg-[#f9f8f6] px-8 py-4">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
+      <section className="bg-[#f9f8f6] px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-4 sm:gap-6 sm:grid-cols-2 md:grid-cols-3">
           {/* Móc khóa */}
           <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
@@ -97,6 +99,8 @@ export default function HomePage() {
               alt="Móc khóa"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
+              quality={70}
+              decoding="async"
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -120,6 +124,8 @@ export default function HomePage() {
               alt="Treo áo"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
+              quality={70}
+              decoding="async"
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -143,6 +149,8 @@ export default function HomePage() {
               alt="Bookmark"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
+              quality={70}
+              decoding="async"
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -162,7 +170,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== DIY KIT BLOCK ===== */}
-      <section className="bg-[#f9f8f6] px-8 py-12 md:py-16">
+      <section className="bg-[#f9f8f6] px-4 py-10 sm:px-6 md:py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-8 md:grid-cols-2">
             {/* Image */}
@@ -172,6 +180,8 @@ export default function HomePage() {
                 alt="DIY Kit"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={70}
+                decoding="async"
                 className="object-cover"
               />
             </div>
@@ -208,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== FEATURED PRODUCTS ===== */}
-      <section className="bg-white px-8 py-16 md:py-20">
+      <section className="bg-white px-4 py-12 sm:px-6 md:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-center font-serif text-2xl font-bold uppercase tracking-[4px] text-[#083B63] md:text-3xl">
             Tinh hoa thủ công

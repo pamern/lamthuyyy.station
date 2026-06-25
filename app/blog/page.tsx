@@ -8,7 +8,7 @@ export default function BlogPage() {
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#C59A5C]">
           Lam Thủy Blog
         </p>
-        <h1 className="mt-5 text-5xl font-semibold text-[#071D3A] md:text-6xl">
+        <h1 className="mt-5 font-serif text-4xl font-semibold text-[#071D3A] sm:text-5xl md:text-6xl">
           Nhật ký di sản
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#5F6670]">

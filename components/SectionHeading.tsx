@@ -13,7 +13,7 @@ export default function SectionHeading({
     <div
       className={`mb-12 ${align === "center" ? "text-center" : "text-left"}`}
     >
-      <h2 className="text-4xl font-bold tracking-tight text-[#0D3B66] md:text-5xl">
+      <h2 className="font-serif text-3xl font-bold tracking-tight text-[#0D3B66] md:text-4xl lg:text-5xl">
         {title}
       </h2>
 
