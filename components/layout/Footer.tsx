@@ -28,7 +28,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-4">
               <Image
-                src="/images/logo.png"
+                src="/brand/logo.png"
                 alt="LAM THỦY"
                 width={48}
                 height={48}
@@ -45,14 +45,18 @@ export default function Footer() {
 
             <div className="mt-6 flex items-center gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/lamthuyyy.station"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-gray-400 transition-colors hover:border-[#B58A43] hover:text-[#B58A43]"
               >
                 <FaFacebookF size={16} />
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/lamthuyy.station"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-gray-400 transition-colors hover:border-[#B58A43] hover:text-[#B58A43]"
               >
                 <FaInstagram size={16} />
@@ -131,7 +135,12 @@ export default function Footer() {
 
             <div className="mt-5 flex items-center gap-3 text-gray-400">
               <Mail size={18} />
-              <span className="text-sm">hello@lamthuy.vn</span>
+              <a
+                href="mailto:lamthuy.station@gmail.com"
+                className="text-sm transition-colors hover:text-[#B58A43]"
+              >
+                lamthuy.station@gmail.com
+              </a>
             </div>
           </div>
         </div>
