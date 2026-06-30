@@ -233,24 +233,40 @@ export default function CartPage() {
     // Generate random order code: LT-XXXXXX
     const randomCode = `LT-${Math.floor(100000 + Math.random() * 900000)}`;
     
-    // Store order details before clearing cart state
-    setOrderSummary({
-      fullName,
-      phone,
-      address,
-      province: selectedProvince,
-      district: selectedDistrict,
-      paymentMethod,
+    const order = {
+      orderId: randomCode,
+      orderDate: new Date().toLocaleDateString("vi-VN"),
+      customer: {
+        fullName,
+        phone,
+        email,
+        address: `${address}, ${selectedDistrict}, ${selectedProvince}`,
+      },
+      paymentMethod:
+        paymentMethod === "bank"
+          ? "Chuyển khoản ngân hàng"
+          : "Thẻ tín dụng quốc tế",
+      paymentStatus: paymentMethod === "bank" ? "pending" : "paid",
+      items: cartItems.map((item) => ({
+        id: item.id,
+        name: item.variant ? `${item.name} - ${item.variant}` : item.name,
+        image: item.image,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+      subtotal,
+      shippingFee,
+      discount: discountAmount,
       total,
-    });
-    
-    setOrderCode(randomCode);
-    setIsSuccessModalOpen(true);
+    };
+
+    sessionStorage.setItem("lastOrder", JSON.stringify(order));
 
     // Clear cart
     localStorage.removeItem("lamthuy_cart");
     setCartItems([]);
     window.dispatchEvent(new Event("cartUpdated"));
+    router.push("/checkout/success");
   };
 
   // Find districts matching selected province

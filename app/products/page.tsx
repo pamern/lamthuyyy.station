@@ -15,6 +15,7 @@ const categoryFilters = [
   "Bookmark",
   "Bộ sản phẩm",
   "DIY Kit",
+  "Nguyên liệu",
 ];
 
 export default function ProductsPage() {
@@ -75,6 +76,7 @@ function ProductsContent() {
     "Bookmark",
     "Bộ sản phẩm",
     "DIY Kit",
+    "Nguyên liệu",
   ];
 
   // Toggle category checklist in sidebar

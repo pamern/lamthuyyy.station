@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ShoppingCart, Star } from "lucide-react";
 import type { Product } from "@/data/products";
 
@@ -8,6 +11,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const router = useRouter();
   const formattedPrice = new Intl.NumberFormat("vi-VN").format(product.price);
   
   let priceDisplay = `${formattedPrice}đ`;
@@ -32,6 +36,38 @@ export default function ProductCard({ product }: ProductCardProps) {
     new: "MỚI",
     "sold-out": "HẾT HÀNG",
     "pre-order": "PRE-ORDER",
+  };
+
+  const handleAddToCart = () => {
+    const variantName = product.variants?.[0]?.name || "Standard";
+    const cartDataStr = localStorage.getItem("lamthuy_cart");
+    let cart: Array<{ productId: string; variant: string; quantity: number }> = [];
+
+    if (cartDataStr) {
+      try {
+        cart = JSON.parse(cartDataStr);
+      } catch {
+        cart = [];
+      }
+    }
+
+    const existingIndex = cart.findIndex(
+      (item) => item.productId === product.id && item.variant === variantName
+    );
+
+    if (existingIndex > -1) {
+      cart[existingIndex].quantity += 1;
+    } else {
+      cart.push({
+        productId: product.id,
+        variant: variantName,
+        quantity: 1,
+      });
+    }
+
+    localStorage.setItem("lamthuy_cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("cartUpdated"));
+    router.push("/cart");
   };
 
   return (
@@ -97,6 +133,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             </span>
 
             <button
+              type="button"
+              onClick={handleAddToCart}
               className="flex h-9 w-9 items-center justify-center rounded-full bg-[#083B63] text-white transition-all duration-200 hover:bg-[#B58A43] hover:scale-110"
               aria-label="Thêm vào giỏ hàng"
             >
