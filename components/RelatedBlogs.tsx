@@ -21,7 +21,7 @@ export default function RelatedBlogs({ currentBlog }: RelatedBlogsProps) {
               Khám phá thêm
             </p>
             <h2 className="mt-3 text-4xl font-semibold text-[#071D3A]">
-              Bài viết liên quan
+              Bài viết tiếp theo
             </h2>
           </div>
 
