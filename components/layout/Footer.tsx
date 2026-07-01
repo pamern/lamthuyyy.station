@@ -32,7 +32,9 @@ export default function Footer() {
                 height={48}
               />
 
-              <h2 className="font-serif text-2xl font-bold tracking-[3px]">LAM THỦY</h2>
+              <h2 className="font-serif text-2xl font-bold tracking-[3px]">
+                LAM THỦY
+              </h2>
             </div>
 
             <p className="mt-4 leading-7 text-gray-400">
@@ -43,7 +45,7 @@ export default function Footer() {
 
             <div className="mt-6 flex gap-4 text-gray-400">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/lamthuyyy.station/"
                 target="_blank"
                 rel="noreferrer"
                 className="transition-colors hover:text-[#B58A43]"
@@ -52,7 +54,7 @@ export default function Footer() {
                 <FaFacebookF size={18} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/lamthuyy.station/"
                 target="_blank"
                 rel="noreferrer"
                 className="transition-colors hover:text-[#B58A43]"
@@ -70,7 +72,7 @@ export default function Footer() {
                 <FaTiktok size={18} />
               </a>
             </div>
-            
+
             <div className="mt-5 flex items-center gap-3 text-gray-400">
               <Mail size={18} />
               <a

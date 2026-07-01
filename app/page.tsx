@@ -195,14 +195,14 @@ export default function HomePage() {
               <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-4xl">
                 Tự tay tạo nên{" "}
                 <br />
-                di sản của chính mình
+                tác phẩm của chính mình
               </h2>
 
               <p className="mt-5 text-sm leading-7 text-gray-300">
                 Bộ DIY Kit từ Lam Thủy mang đến cho bạn cơ hội trải
                 nghiệm trọn vẹn kỹ thuật Pháp Lam cổ xưa. Với nguyên
                 liệu và hướng dẫn để bạn trải nghiệm quá trình sáng
-                tạo thủ công – biến mỗi khoảnh khắc thành di sản
+                tạo thủ công – biến mỗi khoảnh khắc thành tác phẩm
                 Pháp Lam một cách trọn vẹn.
               </p>
 
