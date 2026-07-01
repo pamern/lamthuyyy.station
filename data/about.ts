@@ -20,19 +20,19 @@ export const aboutValues = [
 
 export const timelineItems = [
   {
-    date: "03 / 2024",
+    date: "03 / 2026",
     title: "Ý tưởng được hình thành",
     description:
       "Khởi nguồn từ mong muốn đưa nghệ thuật Pháp Lam Huế bước ra khỏi không gian trưng bày truyền thống và đến gần hơn với đời sống hiện đại.",
   },
   {
-    date: "07 / 2024",
+    date: "05 / 2026",
     title: "Nghiên cứu & thử nghiệm",
     description:
       "Thực hiện nhiều lần thử nghiệm về màu men, chất liệu và quy trình chế tác để tạo nên sản phẩm mang tinh thần truyền thống nhưng phù hợp với thẩm mỹ đương đại.",
   },
   {
-    date: "01 / 2025",
+    date: "06 / 2026",
     title: "LAM THỦY chính thức ra mắt",
     description:
       "Giới thiệu bộ sưu tập đầu tiên cùng các workshop DIY, mở ra hành trình lan tỏa vẻ đẹp của Pháp Lam đến nhiều người hơn.",
